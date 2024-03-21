@@ -1,43 +1,28 @@
-<nav class="nav-header relative flex w-full flex-wrap items-center justify-center py-2 shadow-dark-mild lg:py-4">
-  <div class="flex w-full items-center justify-between px-3 md:px-40">
-    <div class="flex items-center space-x-4">
-      <%= link_to root_path, class: "logo-link" do %>
-        <img class="me-2 h-10" src="<%= asset_path('ffm_icon.png') %>" alt="ffm Logo" loading="lazy" />
-      <% end %>
-    </div>
-    <form class="flex justify-center flex-grow md:justify-center items-center">
-      <div class="relative flex items-center w-full md:w-[30%] justify-center">
-        <div class="relative border border-solid border-secondary-500 rounded">
-          <input type="search" class="relative m-0 block flex-auto rounded bg-transparent bg-clip-padding px-10 py-1.5 text-base font-normal text-surface transition duration-300 ease-in-out focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none motion-reduce:transition-none dark:bg-body-dark dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
-          <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-500">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5">
-              <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
-            </svg>
-          </span>
-        </div>
-      </div>
+<div class="navbar navbar-expand-sm navbar-light navbar-ffm">
+  <div class="container-fluid">
+    <%= link_to root_path do %>
+      <%= image_tag("ffm_icon.png", class: "navbar-brand") %>
+    <% end %>
+
+    <form class="form-inline ml-auto">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
-    <div class="relative">
-      <button class="focus:outline-none" aria-label="User menu" @click="isOpen = !isOpen">
-        <img src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg" class="rounded-full h-8 w-8" alt="TE Avatar" loading="lazy" />
-      </button>
-      <ul class="absolute bg-white rounded-md shadow-lg py-1 mt-2 w-32 right-0 opacity-0 transition duration-300 ease-in-out" aria-label="User menu" x-show="isOpen" @click.away="isOpen = false">
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Your Profile</a></li>
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Settings</a></li>
-        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Sign Out</a></li>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">My Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
-</nav>
-
-<script>
-  document.addEventListener('click', function(event) {
-    const dropdownButton = document.querySelector('[aria-label="User menu"]');
-    const dropdownMenu = document.querySelector('[aria-label="User menu"] + ul');
-    if (dropdownButton.contains(event.target)) {
-      dropdownMenu.classList.toggle('opacity-100');
-    } else if (!dropdownMenu.contains(event.target)) {
-      dropdownMenu.classList.remove('opacity-100');
-    }
-  });
-</script>
+</div>

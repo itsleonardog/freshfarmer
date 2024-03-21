@@ -6,6 +6,8 @@ ruby "3.1.2"
 # Custom gems
 gem "devise"
 gem "sassc-rails"
+gem "bootstrap", "~> 5.2"
+gem "font-awesome-sass", "~> 6.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8", ">= 7.0.8.1"
@@ -29,7 +31,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails"
+# gem "tailwindcss-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
