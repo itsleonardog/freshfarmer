@@ -1,6 +1,6 @@
 .navbar-ffm {
   justify-content: space-between;
-  background: $nuevo-tokyo-grey;
+  background: #F4F4F4;
   min-height: 80px;
 
   .navbar-collapse {
@@ -16,13 +16,13 @@
     border-radius: 50%;
   }
 
-  @media (min-width: 992px) { // Adjust this value according to your breakpoint for desktop view
+  @media (min-width: 992px) {
     .navbar-brand {
       margin-left: 100px;
     }
 
-    .avatar {
-      margin-right: 100px; // Add margin for spacing between logo and user icon
+    .nav-item {
+      margin-right: 100px;
     }
   }
 }
